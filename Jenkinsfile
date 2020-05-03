@@ -1,21 +1,17 @@
 pipeline {
     agent any
-
     stages {
         stage('Build') {
             steps {
                 mvn 'clean install -DskipTests'
             }
         }
-
         stage('Unit Test') {
             steps {
                 mvn 'test'
             }
         }
-
     }
-
     post {
         always {
             cleanWs()
