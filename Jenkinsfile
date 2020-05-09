@@ -30,3 +30,4 @@ def mvn(def args) {
         sh "${mvnHome}/bin/mvn ${args} --batch-mode -V -U -e -Dsurefire.useFile=false"
     }
 }
+
