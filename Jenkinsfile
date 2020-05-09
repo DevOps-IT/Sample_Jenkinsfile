@@ -1,5 +1,8 @@
 pipeline {
     agent any
+    parameters {
+        string(defaultValue: "dev", description: '', name: 'ENV')
+    }
     stages {
         stage('Build') {
             steps {
@@ -9,6 +12,14 @@ pipeline {
         stage('Unit Test') {
             steps {
                 mvn 'test'
+            }
+        }
+        stage('Dev Deployment') {
+            when {
+                expression { params.ENV == 'dev' }
+            }
+            steps {
+                echo "Hello, We are in DEV!"
             }
         }
     }
