@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                mvn 'clean install -DskipTests'
+                mvn 'clean install' //-DskipTests'
             }
         }
         stage('Unit Test') {
