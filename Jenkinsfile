@@ -25,7 +25,7 @@ pipeline {
     }
     post {
         always {
-            cleanWs()
+            //cleanWs()
             mail to: 'xs2vipin.bansal@gmail.com',
              subject: "Build Job: ${currentBuild.fullDisplayName}",
              body: "This is ${env.BUILD_URL}"
