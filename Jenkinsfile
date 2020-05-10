@@ -27,9 +27,9 @@ pipeline {
         always {
             junit testResults: '**/target/surefire-reports/*.xml', allowEmptyResults: false
             //cleanWs()
-            mail to: '      @gmail.com',
-             subject: "Build Job: ${currentBuild.fullDisplayName}",
-             body: "This is ${env.BUILD_URL}"
+            //mail to: '      @gmail.com',
+             //subject: "Build Job: ${currentBuild.fullDisplayName}",
+             //body: "This is ${env.BUILD_URL}"
         }
     }
 }
